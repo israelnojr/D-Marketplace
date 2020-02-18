@@ -6093,14 +6093,101 @@
   },
   "networks": {
     "5777": {
-      "events": {},
+      "events": {
+        "0x63a99101901c72cb03a9e6f1cbaeda2eb16085ea58e490c2ecf7835160b16eb2": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "desc",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address payable",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "bool",
+              "name": "purchased",
+              "type": "bool"
+            }
+          ],
+          "name": "ProductCreated",
+          "type": "event"
+        },
+        "0x5670f88139d28601bfe12c4f5db1a8220966f1b2c6f5c1b3e9731748c12bef64": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "desc",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address payable",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "bool",
+              "name": "purchased",
+              "type": "bool"
+            }
+          ],
+          "name": "ProductPurchased",
+          "type": "event"
+        }
+      },
       "links": {},
-      "address": "0xE45deF71d49A35e7e8Ce34BBc032fD82e14DA119",
-      "transactionHash": "0x3f7ef82781a74b635ad0d2da37a43aa019ec04a348cbaf4d717bab4b5cad3e6b"
+      "address": "0x131F7356db87B89aC5831fEa93C934C977263d31",
+      "transactionHash": "0x7a4150cdb1e5da41c0be33a6f2fe14020d4c7f2a9f9f471e3f3d4f096eca7e4d"
     }
   },
   "schemaVersion": "3.0.23",
-  "updatedAt": "2020-02-18T01:00:19.339Z",
+  "updatedAt": "2020-02-18T01:30:03.258Z",
   "devdoc": {
     "methods": {}
   },
