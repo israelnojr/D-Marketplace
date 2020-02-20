@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity 0.5.16;
 
 contract Marketplace {
     string public name;
@@ -9,6 +9,7 @@ contract Marketplace {
         uint id;
         string name;
         string desc;
+        string ipfsHash;
         uint price;
         address payable owner;
         bool purchased;
@@ -18,6 +19,7 @@ contract Marketplace {
         uint id,
         string name,
         string desc,
+        string ipfsHash,
         uint price,
         address payable owner,
         bool purchased
@@ -27,6 +29,7 @@ contract Marketplace {
         uint id,
         string name,
         string desc,
+        string ipfsHash,
         uint price,
         address payable owner,
         bool purchased
@@ -36,10 +39,11 @@ contract Marketplace {
         name = "Juis Decentralized MarketPlace";
     }
 
-    function createProduct(string memory _name, string memory _desc, uint _price) public {
+    function createProduct(string memory _name, string memory _desc, string memory _ipfsHash, uint _price) public {
         //Validate
         require(bytes(_name).length > 0);
         require(bytes(_desc).length > 10);
+        require(bytes(_ipfsHash).length > 0);
         require(_price > 0);
 
         //increment product count
@@ -50,6 +54,7 @@ contract Marketplace {
             productCount,
             _name,
             _desc,
+            _ipfsHash,
             _price,
             msg.sender,
             false
@@ -60,6 +65,7 @@ contract Marketplace {
             productCount,
             _name,
             _desc,
+            _ipfsHash,
             _price,
             msg.sender,
             false
@@ -77,6 +83,8 @@ contract Marketplace {
         require(msg.value >= _product.price);
         // check if product is not already purchased
         require(!_product.purchased);
+        //check if there's image
+         require(bytes(_product.ipfsHash).length > 0);
         //check that seller is not buyer
         require(_seller != msg.sender);
         // purchase it
@@ -92,6 +100,7 @@ contract Marketplace {
             productCount,
             _product.name,
             _product.desc,
+            _product.ipfsHash,
             _product.price,
             msg.sender,
             true
